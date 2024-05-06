@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 
 import fs from 'fs';
 import util from 'util';
-import { uploadFile, getFileStream} from './server/s3upload/s3.js';
+// import { uploadFile, getFileStream} from './server/s3upload/s3.js';
 import multer from 'multer';
 //const { uploadFile, getFileStream } = require('./server/s3upload/s3')
 
@@ -68,4 +68,8 @@ app.get("*", (req, res) => {
   app.listen(port, () =>
     console.log(`Server running at http://localhost:${port}`)
   );
+
+
+
+  export default app
   

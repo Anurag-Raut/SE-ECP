@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import SideBar from "../../components/sidebar/SideBar"
 import {Table, Tag, Button, notification} from "antd";
 import {Link} from "react-router-dom"
-import { signup, getAllEmployee } from "../../redux/actions/userAction";
+import { signup, getAllEmployee, getPendingEmployee } from "../../redux/actions/userAction";
 import { connect } from "react-redux";
 import xlsx from "xlsx"
 import store from "../../redux/store";
@@ -86,7 +86,7 @@ useEffect(() => {
 }, [props.alert_message]);
 
 
-
+props.getAllEmployee()
 
 
     return(
@@ -103,7 +103,7 @@ useEffect(() => {
                     <p>Assigned Projects</p>
                 </div>
                 <div style={{color:"#CF2548"}}className="dashboard-card">
-                    <p>3</p>
+                    <p>{props?.all_employee?.documents?.length??0}</p>
                     <p>Employees</p>
                 </div>
             </div>

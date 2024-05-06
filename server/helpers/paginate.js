@@ -10,7 +10,7 @@ export const paginate = async (schema, query, page, document_per_page) =>{
       current_page: page,
       document_per_page: document_per_page,
     };
-    if (docs.length === 0) result.message = 'No documents found';
-    else result.documents = docs;
+    // if (docs.length === 0) result.message = 'No documents found';
+    result.documents = docs??[];
     return result;
 }

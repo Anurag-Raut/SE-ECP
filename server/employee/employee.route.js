@@ -8,7 +8,7 @@ import { config } from "dotenv";
 import sgMail from '@sendgrid/mail'
 import fs from 'fs';
 import util from 'util';
-import { uploadFile} from '../s3upload/s3.js';
+// import { uploadFile} from '../s3upload/s3.js';
 import multer from 'multer';
 import {spawn} from "child_process";
 import fileSystem from "fs";
@@ -20,7 +20,7 @@ const upload = multer({ dest: 'uploads/' })
 
 config()
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const router = express.Router()
 
@@ -107,17 +107,17 @@ router.post('/newemployee', authorize, async (req, res) => {
     })
 
     try{
-        let single_offer_mail = {
-            to: employee.email, // Change to your recipient
-            from: 'shwetakale144@gmail.com', // Change to your verified sender
-            subject: 'Offer Letter for joining',
-            html: offerHtml(employee),          
-        }
-        sgMail.send(single_offer_mail).then(() => {
-            console.log('emails sent successfully!');
-        }).catch(error => {
-            console.log(error);
-        });
+    //     let single_offer_mail = {
+    //         to: employee.email, // Change to your recipient
+    //         from: 'shwetakale144@gmail.com', // Change to your verified sender
+    //         subject: 'Offer Letter for joining',
+    //         html: offerHtml(employee),          
+    //     }
+    //     sgMail.send(single_offer_mail).then(() => {
+    //         console.log('emails sent successfully!');
+    //     }).catch(error => {
+    //         console.log(error,"erererer");
+    //     });
 
         const savedUser = await employee.save()
 
