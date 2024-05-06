@@ -1,0 +1,40 @@
+.empdash{
+    width: 100%;
+    min-height: 100vh;      
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.empcontainer{
+    background-color: aliceblue;
+    padding: 80px;
+    flex-direction: column;
+}
+
+.doc{
+    display: flex;
+    column-gap: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.doc>p{
+   min-width: 100px;
+}
+
+.viewDoc{
+    font-size: 22px;
+    cursor:pointer;
+}
+
+.doc-verified{
+    color:green;
+    font-size: 22px;
+}
+
+.doc-unverified{
+    color:red;
+    font-size: 22px;
+}
